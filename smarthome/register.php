@@ -13,7 +13,7 @@ if(isset($_POST['submit'])) {
 	$date = date("d.m.Y");
 	
 	if($username !="" or $password != "" or $cpassword !="" or $lastname != "" or $firstname !="" or $email != "") {
-		if(strlen($password) <= 5) {
+		if(strlen($password) > 4) {
 			if($password == $cpassword) {
 				$password = $hashpw;
 				

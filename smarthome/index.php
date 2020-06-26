@@ -7,12 +7,11 @@ if(isset($_SESSION['username'])) {
 	header('location:' . $loginlink);
 }
 
-
-
-
 # !! DARK !!
 
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -55,6 +54,7 @@ if(isset($_SESSION['username'])) {
                 </li>
             </ul>
         </nav>
+		
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -70,7 +70,16 @@ if(isset($_SESSION['username'])) {
 								</div>
 						Dashboard
 							</a>
+
+							<a class="nav-link" href="?p=news" style="cursor: pointer;">
+								<div class="sb-nav-link-icon">
+									<i class="fas fa-tachometer-alt"></i>
+								</div>
+						News
+							</a>
+
 							
+
 							<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
 								<div class="sb-nav-link-icon">
 									<i class="fas fa-columns"></i>
@@ -130,7 +139,17 @@ if(isset($_SESSION['username'])) {
 										Whitelist
 								</a>';
 							
+								
+								
+								echo '<a class="nav-link" href="?p=ip">
+                                					<div class="sb-nav-link-icon">
+										<i class="fas fa-wifi"></i>
+									</div>
+										IP-lookup
+								</a>';
+							
 								}
+								
 							?>
 							
                         </div>
@@ -175,6 +194,10 @@ if(isset($_SESSION['username'])) {
 							include('main/communication.php');
 						}elseif($page == 'devices'){
 							include('main/device.php');
+						}elseif($page == 'ip'){
+							include('data.php');
+						}elseif($page == 'news'){
+							include('main/newinfo.php');
 						}else{
 							include('main/index.php');
 						}
